@@ -1,6 +1,9 @@
 import React from 'react'
+import { ITask } from '../../interfaces/Task'
 
-type Props = {}
+type Props = {
+  taskList: ITask[]
+}
 
 const TaskList = (props: Props) => {
   return (
