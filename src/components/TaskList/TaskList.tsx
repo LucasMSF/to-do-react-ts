@@ -3,14 +3,16 @@ import { ITask } from '../../interfaces/Task'
 import "bootstrap-icons/font/bootstrap-icons.css"
 
 type Props = {
-  taskList: ITask[]
+  taskList: ITask[],
+  handleDeleteTask: (id: number) => void,
+  // handleEditTask: (task: ITask) => void,
 }
 
 const TaskList = (props: Props) => {
   return (
     <>
       {props.taskList.length > 0 ?
-          <div className="flex flex-col w-full mb-2">
+          <div className="flex flex-col w-full mb-5">
             {props.taskList.map((task) => (
               <div className='flex justify-between shadow-lg p-5 mt-5 bg-[#282c34] text-white'>
                 <div>
@@ -19,12 +21,12 @@ const TaskList = (props: Props) => {
                 </div>
                 <div className='flex flex-col text-2xl text-center'>
                   <i className="transition duration-150 cursor-pointer bi bi-pencil bg-[#61dafb] p-2 w-12 hover:text-[#282c34]"></i>
-                  <i className="transition duration-150 cursor-pointer bi bi-trash bg-[#61dafb] p-2 w-12 mt-2 hover:text-[#282c34]"></i>
+                  <i className="transition duration-150 cursor-pointer bi bi-trash bg-[#61dafb] p-2 w-12 mt-2 hover:text-[#282c34]" onClick={() => props.handleDeleteTask(task.id)}></i>
                 </div>
               </div>
             ))}
           </div>
-        : <h1 className='font-bold text-3xl text-[#282c34] text-center'>Não há tarefas</h1>
+        : <h1 className='font-bold text-3xl text-[#282c34] text-center mb-5'>Não há tarefas</h1>
       }
     </>
   )
