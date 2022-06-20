@@ -11,11 +11,13 @@ function App() {
   return (
     <div className="h-screen">
       <Header />
-      <div className='min-h-[80vh] flex flex-col justify-center items-center'>
+      <div className='min-h-[80vh] flex justify-center'>
+        <div className='flex flex-col justify-center items-center'>
         <h1 className='font-bold text-3xl text-[#61dafb] mb-8'>Nova tarefa</h1>
-        <TaskForm />
+        <TaskForm setTaskList={setTaskList}/>
         <h1 className='font-bold text-3xl text-[#61dafb] my-8'>Suas tarefas</h1>
         <TaskList taskList={taskList}/>
+        </div>
       </div>
       <Footer />
     </div>
