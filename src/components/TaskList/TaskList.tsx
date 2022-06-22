@@ -4,11 +4,17 @@ import "bootstrap-icons/font/bootstrap-icons.css"
 
 type Props = {
   taskList: ITask[],
-  handleDeleteTask: (id: number) => void,
+  deleteTask: (id: number) => void,
   // handleEditTask: (task: ITask) => void,
 }
 
+
+
 const TaskList = (props: Props) => {
+  const handleDeleteTask = (id: number) => {
+    props.deleteTask(id)
+  }
+
   return (
     <>
       {props.taskList.length > 0 ?
@@ -21,7 +27,7 @@ const TaskList = (props: Props) => {
                 </div>
                 <div className='flex flex-col text-2xl text-center'>
                   <i className="transition duration-150 cursor-pointer bi bi-pencil bg-[#61dafb] p-2 w-12 hover:text-[#282c34]"></i>
-                  <i className="transition duration-150 cursor-pointer bi bi-trash bg-[#61dafb] p-2 w-12 mt-2 hover:text-[#282c34]" onClick={() => props.handleDeleteTask(task.id)}></i>
+                  <i className="transition duration-150 cursor-pointer bi bi-trash bg-[#61dafb] p-2 w-12 mt-2 hover:text-[#282c34]" onClick={() => handleDeleteTask(task.id)}></i>
                 </div>
               </div>
             ))}

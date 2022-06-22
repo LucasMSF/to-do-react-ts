@@ -13,7 +13,7 @@ function App() {
   }
 
   const editTask = (id: number, title: string, difficulty: number) => {
-    const editedTask: ITask = {id, title, difficulty} 
+    const editedTask: ITask = { id, title, difficulty }
     const newTaskList: ITask[] = taskList.map((task) => task.id === editedTask.id ? editedTask : task)
     setTaskList(newTaskList);
   }
@@ -26,7 +26,7 @@ function App() {
           <h1 className='font-bold text-3xl text-[#61dafb] mb-8'>Nova tarefa</h1>
           <TaskForm setTaskList={setTaskList} />
           <h1 className='font-bold text-3xl text-[#61dafb] my-8'>Suas tarefas</h1>
-          <TaskList taskList={taskList} handleDeleteTask={deleteTask} />
+          <TaskList taskList={taskList} deleteTask={deleteTask} />
         </div>
       </div>
       <Footer />
