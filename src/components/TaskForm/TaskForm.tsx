@@ -13,6 +13,12 @@ const TaskForm = ({ setTaskList }: Props) => {
 
   const addTaskHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    
+    if(!title || !difficulty) {
+      alert('Preencha todos os campos corretamente!');
+      return;
+    }
+
     setId(id + 1);
 
     setTaskList(oldList => [...oldList, { id, title, difficulty }]);
