@@ -12,12 +12,6 @@ function App() {
     setTaskList(taskList.filter((task => task.id !== id)));
   }
 
-  const editTask = (id: number, title: string, difficulty: number) => {
-    const editedTask: ITask = { id, title, difficulty }
-    const newTaskList: ITask[] = taskList.map((task) => task.id === editedTask.id ? editedTask : task)
-    setTaskList(newTaskList);
-  }
-
   return (
     <div className="h-screen">
       <Header />
