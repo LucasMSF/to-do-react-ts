@@ -26,7 +26,6 @@ const TaskList = (props: Props) => {
                   <p>Dificuldade: {task.difficulty}</p>
                 </div>
                 <div className='flex flex-col text-2xl text-center'>
-                  {/* <i className="transition duration-150 cursor-pointer bi bi-pencil bg-[#61dafb] p-2 w-12 hover:text-[#282c34]"></i> */}
                   <i className="transition duration-150 cursor-pointer bi bi-trash bg-[#61dafb] p-2 w-12 mt-2 hover:text-[#282c34]" onClick={() => handleDeleteTask(task.id)}></i>
                 </div>
               </div>
